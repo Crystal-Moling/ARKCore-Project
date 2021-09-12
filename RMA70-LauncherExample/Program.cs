@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using RMA70_LauncherLib.LibIO;
 using RMA70_LauncherLib.Core.Authentication;
 
 namespace RMA70_LauncherExample
@@ -26,6 +27,9 @@ namespace RMA70_LauncherExample
             Console.WriteLine("Invalidate==========");
             await ygg.InvalidateAsync(re1.AccessToken, re1.ClientToken);
             Console.WriteLine($"Invalidate:{await ygg.ValidateAsync(re1.AccessToken)}");
+
+            Console.WriteLine("JavaPath============");
+            Console.WriteLine(IO.LocateJava());
         }
     }
 }

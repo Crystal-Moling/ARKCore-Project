@@ -91,6 +91,7 @@
         <Compile Include="Core\Authentication\Yggdrasil.cs" />
         <Compile Include="Core\Downloader.cs" />
         <Compile Include="Core\Extensions\AsyncExtensions.cs" />
+        <Compile Include="Core\InitializationCore.cs" />
         <Compile Include="Core\LauncherCore.cs" />
         <Compile Include="Core\Locator\JavaLocator.cs" />
         <Compile Include="Core\Locator\MinecraftLocator.cs" />
