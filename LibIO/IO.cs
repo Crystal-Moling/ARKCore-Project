@@ -1,10 +1,58 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
 using RMA70_LauncherLib.Core.Authentication;
+using RMA70_LauncherLib.Core.Locator;
 
 namespace RMA70_LauncherLib.LibIO
 {
-    public class Authenticator
+    public class IO
     {
+        
+        #region InitializationIO
+
+        public void InitializationCore()
+        {
+            
+        }
+
+        #endregion
+        
+        #region DownloaderIO
+
+        
+
+        #endregion
+
+        #region LauncherIO
+
+        
+
+        #endregion
+        
+        #region LocatorIO
+
+        /// <summary>
+        /// 返回Java路径列表
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<string> LocateJava()
+        {
+            return JavaLocator.FindJava();
+        }
+
+        /// <summary>
+        /// 返回版本列表
+        /// </summary>
+        public void LocateMinecraft()
+        {
+            return;
+        }
+
+        #endregion
+
+        #region AuthIO
+
         private string _username;
         private string _password;
         private AuthResult _result;
@@ -74,5 +122,8 @@ namespace RMA70_LauncherLib.LibIO
             await ygg.InvalidateAsync(_result.AccessToken, _result.ClientToken);
             return await ygg.ValidateAsync(_result.AccessToken);
         }
+
+        #endregion
+
     }
 }

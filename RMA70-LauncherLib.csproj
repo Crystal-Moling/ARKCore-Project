@@ -89,18 +89,15 @@
         <Compile Include="Core\Authentication\AuthPayload.cs" />
         <Compile Include="Core\Authentication\AuthResult.cs" />
         <Compile Include="Core\Authentication\Yggdrasil.cs" />
+        <Compile Include="Core\Downloader.cs" />
         <Compile Include="Core\Extensions\AsyncExtensions.cs" />
-        <Compile Include="Core\Launcher\LauncherCore.cs" />
+        <Compile Include="Core\LauncherCore.cs" />
         <Compile Include="Core\Locator\JavaLocator.cs" />
         <Compile Include="Core\Locator\MinecraftLocator.cs" />
         <Compile Include="Core\Utils\HttpHelper.cs" />
         <Compile Include="Core\Utils\HttpResult.cs" />
-        <Compile Include="LibIO\Authenticator.cs" />
-        <Compile Include="LibIO\Locator.cs" />
+        <Compile Include="LibIO\IO.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Core\Downloader" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

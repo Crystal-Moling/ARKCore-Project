@@ -1,4 +1,4 @@
-﻿namespace RMA70_LauncherLib.Core.Launcher
+﻿namespace RMA70_LauncherLib.Core
 {
     public class LauncherCore
     {
