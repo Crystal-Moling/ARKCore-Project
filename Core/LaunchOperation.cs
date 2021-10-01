@@ -1,6 +1,6 @@
 ﻿namespace RMA70_LauncherLib.Core
 {
-    public class Downloader
+    public class LaunchOperation
     {
         
     }

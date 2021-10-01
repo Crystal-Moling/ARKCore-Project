@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using RMA70_LauncherLib.LibIO;
-using RMA70_LauncherLib.Core.Authentication;
+using RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Authentication;
+using RMA70_LauncherLib.CoreIO;
 
 namespace RMA70_LauncherExample
 {

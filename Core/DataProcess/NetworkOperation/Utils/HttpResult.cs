@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace RMA70_LauncherLib.Core.Utils
+namespace RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Utils
 {
     public class HttpResult
     {

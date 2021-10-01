@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using RestSharp;
-using RMA70_LauncherLib.Core.Extensions;
+using RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Extensions;
 
-namespace RMA70_LauncherLib.Core.Utils
+namespace RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Utils
 {
     
     public partial class HttpHelper

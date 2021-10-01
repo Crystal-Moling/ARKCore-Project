@@ -1,10 +1,10 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using RMA70_LauncherLib.Core.Extensions;
-using RMA70_LauncherLib.Core.Utils;
+using RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Extensions;
+using RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Utils;
 
-namespace RMA70_LauncherLib.Core.Authentication
+namespace RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Authentication
 {
     public partial class Yggdrasil
     {

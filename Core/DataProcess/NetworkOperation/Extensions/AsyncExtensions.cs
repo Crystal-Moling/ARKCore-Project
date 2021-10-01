@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace RMA70_LauncherLib.Core.Extensions
+namespace RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Extensions
 {
     public static class AsyncExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace RMA70_LauncherLib.Core.Authentication
+namespace RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Authentication
 {
     internal class AuthPayload
     {

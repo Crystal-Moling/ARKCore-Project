@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RMA70_LauncherLib.Core.Authentication
+namespace RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Authentication
 {
     public class AuthResult
     {

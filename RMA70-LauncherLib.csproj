@@ -86,22 +86,27 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Core\Authentication\AuthPayload.cs" />
-        <Compile Include="Core\Authentication\AuthResult.cs" />
-        <Compile Include="Core\Authentication\Yggdrasil.cs" />
-        <Compile Include="Core\Downloader.cs" />
-        <Compile Include="Core\Extensions\AsyncExtensions.cs" />
-        <Compile Include="Core\InitializationCore.cs" />
-        <Compile Include="Core\LauncherCore.cs" />
-        <Compile Include="Core\Locator\JavaLocator.cs" />
-        <Compile Include="Core\Locator\MinecraftLocator.cs" />
-        <Compile Include="Core\Utils\HttpHelper.cs" />
-        <Compile Include="Core\Utils\HttpResult.cs" />
-        <Compile Include="LibIO\IO.cs" />
+        <Compile Include="Core\CoreVariables.cs" />
+        <Compile Include="Core\DataProcess\NetworkOperation\Authentication\AuthPayload.cs" />
+        <Compile Include="Core\DataProcess\NetworkOperation\Authentication\AuthResult.cs" />
+        <Compile Include="Core\DataProcess\NetworkOperation\Authentication\Yggdrasil.cs" />
+        <Compile Include="CoreIO\IO.cs" />
+        <Compile Include="Core\DataProcess\NetworkOperation\Extensions\AsyncExtensions.cs" />
+        <Compile Include="Core\DataProcess\NetworkOperation\Utils\HttpHelper.cs" />
+        <Compile Include="Core\DataProcess\NetworkOperation\Utils\HttpResult.cs" />
+        <Compile Include="Core\LaunchOperation.cs" />
+        <Compile Include="Core\StartupDependency\GameDependency\MinecraftLocator.cs" />
+        <Compile Include="Core\StartupDependency\SystemDependency\JavaLocator.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Core\DataProcess\ConfigurationAccess" />
+      <Folder Include="Core\DataProcess\FileDownload" />
+      <Folder Include="Core\DataProcess\JsonAnalysis" />
+      <Folder Include="Core\DataProcess\NetworkOperation" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
