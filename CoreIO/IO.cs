@@ -29,9 +29,9 @@ namespace RMA70_LauncherLib.CoreIO
         /// 返回Java路径列表 Return Java path list
         /// </summary>
         /// <returns></returns>
-        public static IEnumerable<string> LocateJava()
+        public static string LocateJava()
         {
-            return JavaLocator.FindJava();
+            return JavaLocator.FindJava().ToString();
         }
         
         /// <summary>
@@ -39,9 +39,9 @@ namespace RMA70_LauncherLib.CoreIO
         /// </summary>
         /// <param name="MCDir">.minecraft文件夹路径 .minecraft folder path</param>
         /// <returns></returns>
-        public static List<string> LocateMinecraft(String MCDir)
+        public static string LocateMinecraft(String MCDir)
         {
-            return MinecraftLocator.LocateMinecraft(MCDir + "/versions");
+            return MinecraftLocator.LocateMinecraft(MCDir + "/versions").ToString();
         }
 
         #endregion

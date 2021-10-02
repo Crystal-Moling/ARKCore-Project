@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMA70-LauncherLib", "RMA70-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMA70-LauncherExample", "RMA70-LauncherExample\RMA70-LauncherExample.csproj", "{51690C6A-749A-452A-9D64-53FB3D01E836}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMA70-LauncherExampleWPF", "RMA70-LauncherExampleWPF\RMA70-LauncherExampleWPF.csproj", "{CA38100A-9210-4C15-A99E-823579F7608E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{51690C6A-749A-452A-9D64-53FB3D01E836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51690C6A-749A-452A-9D64-53FB3D01E836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51690C6A-749A-452A-9D64-53FB3D01E836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA38100A-9210-4C15-A99E-823579F7608E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA38100A-9210-4C15-A99E-823579F7608E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA38100A-9210-4C15-A99E-823579F7608E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA38100A-9210-4C15-A99E-823579F7608E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

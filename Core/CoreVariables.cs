@@ -1,6 +1,4 @@
-﻿using System.Web.UI;
-
-namespace RMA70_LauncherLib.Core
+﻿namespace RMA70_LauncherLib.Core
 {
     public class CoreVariables
     {
