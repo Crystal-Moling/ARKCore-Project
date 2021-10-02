@@ -6,8 +6,6 @@
 	Logo inspiration:Arknights
 </p>
 
----
-
 # Language
 English | [简体中文](https://github.com/T4M-Moling/RMA70-LauncherLib/blob/master/README-ZH.md)
 

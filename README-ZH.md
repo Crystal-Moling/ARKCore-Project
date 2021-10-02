@@ -6,8 +6,6 @@
 	Logo 来源:明日方舟
 </p>
 
----
-
 # 语言
 [English](https://github.com/T4M-Moling/RMA70-LauncherLib/blob/master/README.md) | 简体中文
 
