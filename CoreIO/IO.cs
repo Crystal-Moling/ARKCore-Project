@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Authentication;
 using RMA70_LauncherLib.Core.Locator;
+using RMA70_LauncherLib.Core.StartupDependency.GameDependency;
 
 namespace RMA70_LauncherLib.CoreIO
 {
@@ -32,20 +34,22 @@ namespace RMA70_LauncherLib.CoreIO
         #region LocatorIO
 
         /// <summary>
-        /// 返回Java路径列表
+        /// 返回Java路径列表 Return Java path list
         /// </summary>
         /// <returns></returns>
         public static IEnumerable<string> LocateJava()
         {
             return JavaLocator.FindJava();
         }
-
+        
         /// <summary>
-        /// 返回版本列表
+        /// 返回版本列表 Return version list
         /// </summary>
-        public static void LocateMinecraft()
+        /// <param name="MCDir">.minecraft文件夹路径 .minecraft folder path</param>
+        /// <returns></returns>
+        public static List<string> LocateMinecraft(String MCDir)
         {
-            return;
+            return MinecraftLocator.LocateMinecraft(MCDir + "/versions");
         }
 
         #endregion
@@ -57,10 +61,10 @@ namespace RMA70_LauncherLib.CoreIO
         private static AuthResult _result;
 
         /// <summary>
-        /// 初始化认证信息
+        /// 初始化认证信息 Initialize authentication information
         /// </summary>
-        /// <param name="username">邮箱</param>
-        /// <param name="password">密码</param>
+        /// <param name="username">邮箱 email</param>
+        /// <param name="password">密码 passwd</param>
         public static void InitializationAuthData(string username, string password)
         {
             _username = username;
@@ -68,7 +72,7 @@ namespace RMA70_LauncherLib.CoreIO
         }
         
         /// <summary>
-        /// 使用密码认证用户,需要初始化认证信息
+        /// 使用密码认证用户,需要初始化认证信息 Use password to authenticate users, need to initialize authentication information
         /// </summary>
         /// <returns></returns>
         public static async Task<(string Username, string AccessToken, bool Verified)> MojangAuth()

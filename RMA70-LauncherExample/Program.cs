@@ -9,6 +9,7 @@ namespace RMA70_LauncherExample
     {
         public static async Task Main(string[] args)
         {
+            
             var ygg = new Yggdrasil("","");
             
             var re = await ygg.AuthAsync();
@@ -18,7 +19,10 @@ namespace RMA70_LauncherExample
 
             Console.WriteLine("JavaPath============");
             Console.WriteLine(IO.LocateJava());
-
+            
+            Console.WriteLine("Minecraft===========");
+            Console.WriteLine(IO.LocateMinecraft(".minecraft"));
+            
         }
     }
 }

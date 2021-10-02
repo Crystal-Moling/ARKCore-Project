@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace RMA70_LauncherLib.Core.StartupDependency.GameDependency
 {
     public class MinecraftLocator
     {
-        public void LocateMinecraft()
+        public static List<string> LocateMinecraft(String MinecraftDir)
         {
+            List<String> Versions = new List<string>();
             try
             {
-                DirectoryInfo verDir = new DirectoryInfo(".minecraft/versions");
+                DirectoryInfo verDir = new DirectoryInfo(MinecraftDir);
                 FileSystemInfo[] verFDirs = verDir.GetFileSystemInfos();
                 foreach (var VerFDir in verFDirs)
                 {
@@ -23,7 +25,11 @@ namespace RMA70_LauncherLib.Core.StartupDependency.GameDependency
                         if (File.Exists(FullFileLacation + ".jar"))
                         {
                             IsJarFileExist = true;
-                            if (File.Exists(FullFileLacation + ".json")) { IsJsonFileExist = true; }
+                            if (File.Exists(FullFileLacation + ".json")) 
+                            { 
+                                IsJsonFileExist = true;
+                                Versions.Add(verdir + "\\" + verinfo);
+                            }
                             else { IsJsonFileExist = false; }
                         }
                         else { IsJarFileExist = false; }
@@ -34,6 +40,7 @@ namespace RMA70_LauncherLib.Core.StartupDependency.GameDependency
             {
                 // ignored
             }
+            return Versions;
         }
     }
 }
