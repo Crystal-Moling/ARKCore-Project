@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using RMA70_LauncherLib.Core;
 using RMA70_LauncherLib.Core.DataProcess.NetworkOperation.Authentication;
 using RMA70_LauncherLib.Core.Locator;
 using RMA70_LauncherLib.Core.StartupDependency.GameDependency;
@@ -9,16 +10,7 @@ namespace RMA70_LauncherLib.CoreIO
 {
     public class IO
     {
-        
-        #region InitializationIO
 
-        public static void InitializationCore()
-        {
-            
-        }
-
-        #endregion
-        
         #region DownloaderIO
 
         
@@ -56,29 +48,20 @@ namespace RMA70_LauncherLib.CoreIO
 
         #region AuthIO
 
-        private static string _username;
-        private static string _password;
         private static AuthResult _result;
 
         /// <summary>
-        /// 初始化认证信息 Initialize authentication information
+        /// 使用密码认证用户,需要初始化认证信息 Use password to authenticate users, need to initialize authentication information
         /// </summary>
         /// <param name="username">邮箱 email</param>
         /// <param name="password">密码 passwd</param>
-        public static void InitializationAuthData(string username, string password)
-        {
-            _username = username;
-            _password = password;
-        }
-        
-        /// <summary>
-        /// 使用密码认证用户,需要初始化认证信息 Use password to authenticate users, need to initialize authentication information
-        /// </summary>
         /// <returns></returns>
-        public static async Task<(string Username, string AccessToken, bool Verified)> MojangAuth()
+        public static async Task<(string Username, string AccessToken, bool Verified)> MojangAuth(string username, string password)
         {
-            var ygg = new Yggdrasil(_username,_password);
+            var ygg = new Yggdrasil(username,password);
             _result = await ygg.AuthAsync();
+            CoreVariables.Username = _result.Username;
+            CoreVariables.AccessToken = _result.AccessToken;
             return (_result.Username,_result.AccessToken,_result.Verified);
         }
 
