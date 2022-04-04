@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ARKCore")]
+[assembly: AssemblyTitle("ARKCore_ConsoleDebug")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ARKCore")]
+[assembly: AssemblyProduct("ARKCore_ConsoleDebug")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("125EBE6A-E4FA-49E0-8BE5-54F3AF0FBB9F")]
+[assembly: Guid("388AE973-D62A-41BE-B25D-AE1F9A190B07")]
 
 // Version information for an assembly consists of the following four values:
 //
