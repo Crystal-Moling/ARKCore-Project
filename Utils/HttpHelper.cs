@@ -7,24 +7,24 @@ namespace ARKCore.Utils
 {
     public partial class HttpHelper
     {
-        private const  string UserAgent = "RMA70LauncherLib";
+        private const  string UserAgent = "ARKCoreLauncherLib";
     }
     
     public partial class HttpHelper
     {
         public static HttpResult GetHttp(string uri) => GetHttpAsync(uri).GetResult();
-        public static HttpResult PostHttp(string uri, string json) => PosHttpAsync(uri, json).GetResult();
+        public static HttpResult PostHttp(string uri, string json) => PostHttpAsync(uri, json).GetResult();
     }
     
     public partial class HttpHelper
     {
-        public static async Task<HttpResult> GetHttpAsync(string uri, string method = "GET")
+        public static async Task<HttpResult> GetHttpAsync(string uri)
         {
             var result = await new RestClient
             {
                 BaseUrl = new Uri(uri),
                 UserAgent = UserAgent,
-                FollowRedirects = false
+                FollowRedirects = true
             }.ExecuteAsync(new RestRequest
             {
                 Method = Method.GET
@@ -32,10 +32,11 @@ namespace ARKCore.Utils
             return new HttpResult
             {
                 Content = result.Content,
-                StatusCode = result.StatusCode
+                StatusCode = result.StatusCode,
+                RedirectTo = result.Content
             };
         }
-        public static async Task<HttpResult> PosHttpAsync(string uri, string json)
+        public static async Task<HttpResult> PostHttpAsync(string uri, string json)
         {
             var client = new RestClient
             {
@@ -48,7 +49,8 @@ namespace ARKCore.Utils
             return new HttpResult
             {
                 Content = result.Content,
-                StatusCode = result.StatusCode
+                StatusCode = result.StatusCode,
+                RedirectTo = result.Content
             };
         }
     }

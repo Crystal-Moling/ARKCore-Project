@@ -5,7 +5,7 @@ namespace ARKCore.Utils
 {
     public class HttpResult
     {
-        public string Content { get; set; }
+        public String Content { get; set; }
         public HttpStatusCode StatusCode { get; set; }
         public String RedirectTo { get; set; }
     }

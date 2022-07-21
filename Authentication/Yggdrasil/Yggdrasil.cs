@@ -50,7 +50,7 @@ namespace ARKCore.Authentication.Yggdrasil
         public async Task<YggAuthResult> AuthAsync()
         {
             var payload = _payload.GetAuthPayload();
-            var result = await HttpHelper.PosHttpAsync(AuthDomain,payload);
+            var result = await HttpHelper.PostHttpAsync(AuthDomain,payload);
             var response = JObject.Parse(result.Content);
 
             return result.StatusCode == HttpStatusCode.OK
@@ -73,7 +73,7 @@ namespace ARKCore.Authentication.Yggdrasil
         public async Task<YggAuthResult> RefreshAsync(string accessToken)
         {
             var payload = _payload.GetRefreshPayload(accessToken);
-            var result = await HttpHelper.PosHttpAsync(RefreshDomain,payload);
+            var result = await HttpHelper.PostHttpAsync(RefreshDomain,payload);
             var response = JObject.Parse(result.Content);
 
             return result.StatusCode == HttpStatusCode.OK
@@ -96,7 +96,7 @@ namespace ARKCore.Authentication.Yggdrasil
         public async Task<bool> ValidateAsync(string accessToken)
         {
             var payload = _payload.GetValidatePayload(accessToken);
-            var result = await HttpHelper.PosHttpAsync(ValidateDomain,payload);
+            var result = await HttpHelper.PostHttpAsync(ValidateDomain,payload);
 
             return result.StatusCode == HttpStatusCode.NoContent;
         }
@@ -104,13 +104,13 @@ namespace ARKCore.Authentication.Yggdrasil
         public async Task InvalidateAsync(string accessToken, string clientToken)
         {
             var payload = _payload.GetInvalidatePayload(accessToken,clientToken);
-            await HttpHelper.PosHttpAsync(InvalidateDomain,payload);
+            await HttpHelper.PostHttpAsync(InvalidateDomain,payload);
         }
         
         public async Task SignOutAsync()
         {
             var payload = _payload.GetSignOutPayload();
-            await HttpHelper.PosHttpAsync(SignOutDomain,payload);
+            await HttpHelper.PostHttpAsync(SignOutDomain,payload);
         }
     }
     

@@ -11,7 +11,7 @@ namespace ARKCore
         #region AuthAPI
 
         private static YggAuthResult _yggResult;
-        private static MsAuthResult _msResult;
+        //private static MsAuthResult _msResult;
         
         public static async Task<(string Username, string AccessToken, bool Verified)> MojangAuth(string username, string password)
         {
@@ -22,14 +22,15 @@ namespace ARKCore
             return (_yggResult.Username,_yggResult.AccessToken,_yggResult.Verified);
         }
 
-        public static String/*Task<(string AccessToken, string RefreshToken, bool ERROR)>*/ MicrosoftAuth()
+        public static async Task<String> /*Task<(string AccessToken, string RefreshToken, bool ERROR)>*/ MicrosoftAuth()
         {
             var ms = new Authentication.Microsoft.Microsoft();
+            String _msResult = await ms.GetToken();
             /*_msResult = await ms.GetToken();
             CoreVariables.AccessToken = _msResult.AccessToken;
             CoreVariables.RefreshToken = _msResult.RefreshToken;
             return (_msResult.AccessToken, _msResult.RefreshToken, _msResult.ERROR);*/
-            return ms.GetToken();
+            return _msResult;
         }
 
         #endregion

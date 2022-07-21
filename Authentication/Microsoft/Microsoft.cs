@@ -1,36 +1,25 @@
 ﻿using System;
-using System.Net;
 using System.Threading.Tasks;
 using ARKCore.Utils;
-using Newtonsoft.Json.Linq;
 
 namespace ARKCore.Authentication.Microsoft
 {
     public partial class Microsoft
     {
-        private readonly Uri _tokenUri = new Uri(@"https://login.live.com/oauth20_authorize.srf?client_id=000000004C12AE6F&redirect_uri=https://login.live.com/oauth20_desktop.srf&scope=service::user.auth.xboxlive.com::MBI_SSL&display=touch&response_type=token&locale=en");
-        
+        private const String AuthDomain = "https://login.live.com/oauth20_authorize.srf?client_id=00000000402b5328&response_type=code&scope=service%3A%3Auser.auth.xboxlive.com%3A%3AMBI_SSL&redirect_uri=https%3A%2F%2Flogin.live.com%2Foauth20_desktop.srf";
+        private const String TokenDomain = "https://login.live.com/oauth20_token.srf";
+        private const String XBLAuthDomain = "https://user.auth.xboxlive.com/user/authenticate";
+        private const String XSTSAuthDomain = "https://xsts.auth.xboxlive.com/xsts/authorize";
+        private const String MinecraftAuthDomain = "https://api.minecraftservices.com/authentication/login_with_xbox";
+        private const String MinecraftProfileDomain = "https://api.minecraftservices.com/minecraft/profile";
     }
 
     public partial class Microsoft
     {
-        public String/*async Task<StringMsAuthResult>*/ GetToken()
+        public async Task<String> GetToken()
         {
-            var result = HttpHelper.GetHttpAsync(_tokenUri.ToString());
-            /*
-            var response = JObject.Parse(result.Content);
-            return result.StatusCode == HttpStatusCode.Found
-                ? new MsAuthResult
-                {
-                    AccessToken = response["access_token"]?.ToString(),
-                    RefreshToken = response["refresh_token"]?.ToString(),
-                    ERROR = false
-                }
-                : new MsAuthResult
-                {
-                    ERROR = true
-                };*/
-            return result.Result.Content;
+            var result = await HttpHelper.GetHttpAsync(AuthDomain);
+            return result.RedirectTo;
         }
     }
 }
